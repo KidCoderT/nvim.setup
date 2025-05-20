@@ -13,8 +13,10 @@ return {
 			filesystem = {
 				hijack_netrw_behavior = "open_current", -- Always open in the current window
 				filtered_items = {
+					visible = true,
 					hide_gitignored = false,
 					hide_dotfiles = false,
+					never_show = { "venv" },
 				},
 			},
 			window = {
