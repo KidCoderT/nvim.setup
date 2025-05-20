@@ -10,14 +10,19 @@ return {{
   lazy = false, -- neo-tree will lazily load itself
   ---@module "neo-tree"
   ---@type neotree.Config?
-  opts = {
-    -- fill any relevant options here
-  },
+  opts = {},
+  -- function(_, opts)
+  --     opts.filesystem.filtered_items = {
+  --     }
+  --     return opts
+  --   end,
 
   config =  function()
     require("neo-tree").setup({
       filesystem = {
             hijack_netrw_behavior = "open_current", -- Always open in the current window
+        hide_gitignored  = false,
+        hide_dotfiles= false,
   },
     window = {
         mappings = {

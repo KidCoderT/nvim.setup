@@ -4,10 +4,10 @@ vim.g.mapleader = " "
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]], {desc="paste without copying what was in place"})
 
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]])
+vim.keymap.set("i", "<C-c>", "<Esc>", {desc="press escape"})
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {desc="escape terminal insert mode"})
 
 vim.keymap.set("n", "<C-a>", function()
   local total_width = vim.api.nvim_get_option("columns")
