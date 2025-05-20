@@ -9,6 +9,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]], {desc="paste without copying what was
 vim.keymap.set("i", "<C-c>", "<Esc>", {desc="press escape"})
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {desc="escape terminal insert mode"})
 
+-- Terminal
 vim.keymap.set("n", "<C-a>", function()
   local total_width = vim.api.nvim_get_option("columns")
   local width = math.floor(total_width * 0.25)
@@ -24,3 +25,6 @@ vim.keymap.set("n", "<C-h>", function()
   vim.cmd("resize " .. height)
   vim.cmd("terminal")
 end, { desc = "Open new terminal buffer below" })
+
+-- Select all
+keymap.set("n", "<C-a>", "gg<S-v>G")
