@@ -27,4 +27,4 @@ vim.keymap.set("n", "<C-h>", function()
 end, { desc = "Open new terminal buffer below" })
 
 -- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+vim.keymap.set("n", "<C-a>", "gg<S-v>G")
