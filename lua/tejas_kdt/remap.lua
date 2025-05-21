@@ -10,21 +10,21 @@ vim.keymap.set("i", "<C-c>", "<Esc>", {desc="press escape"})
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {desc="escape terminal insert mode"})
 
 -- Terminal
-vim.keymap.set("n", "<C-a>", function()
-  local total_width = vim.api.nvim_get_option("columns")
-  local width = math.floor(total_width * 0.25)
-  vim.cmd("rightbelow vsplit")
-  vim.cmd("vertical resize " .. width)
-  vim.cmd("terminal")
-end, { desc = "Open new terminal buffer to right" })
-
-vim.keymap.set("n", "<C-h>", function()
-  local total_height = vim.o.lines
-  local height = math.floor(total_height * 0.25)
-  vim.cmd("rightbelow split")
-  vim.cmd("resize " .. height)
-  vim.cmd("terminal")
-end, { desc = "Open new terminal buffer below" })
+-- vim.keymap.set("n", "<C-a>", function()
+--   local total_width = vim.api.nvim_get_option("columns")
+--   local width = math.floor(total_width * 0.25)
+--   vim.cmd("rightbelow vsplit")
+--   vim.cmd("vertical resize " .. width)
+--   vim.cmd("terminal")
+-- end, { desc = "Open new terminal buffer to right" })
+--
+-- vim.keymap.set("n", "<C-h>", function()
+--   local total_height = vim.o.lines
+--   local height = math.floor(total_height * 0.25)
+--   vim.cmd("rightbelow split")
+--   vim.cmd("resize " .. height)
+--   vim.cmd("terminal")
+-- end, { desc = "Open new terminal buffer below" })
 
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
