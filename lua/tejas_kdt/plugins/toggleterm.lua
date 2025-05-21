@@ -33,16 +33,16 @@ return {
 			end
 
 			function toggle_v()
-				vertical_terminal:toggle()
+				vertical_terminal:toggle(50)
 			end
 
 			function toggle_f()
 				floating_terminal:toggle()
 			end
 
-			vim.keymap.set("n", "<C-j>", toggle_h, { noremap = true, silent = true })
-			vim.keymap.set("n", "<C-l>", toggle_v, { noremap = true, silent = true })
-			vim.keymap.set("n", "<C-i>", toggle_f, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-h>", toggle_h, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-j>", toggle_v, { noremap = true, silent = true })
+			vim.keymap.set("n", "<C-k>", toggle_f, { noremap = true, silent = true })
 
 			-- LazyGit in LUA
 			local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
