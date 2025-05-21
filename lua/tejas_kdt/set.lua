@@ -25,7 +25,9 @@ vim.o.termguicolors = true
 
 vim.g.wilmenu = true
 vim.o.undofile = true
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+local home = os.getenv("HOME") or os.getenv("USERPROFILE") or
+(os.getenv("HOMEDRIVE") and os.getenv("HOMEPATH") and (os.getenv("HOMEDRIVE") .. os.getenv("HOMEPATH")))
+vim.opt.undodir = home .. "/.vim/undodir"
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.updatetime = 50

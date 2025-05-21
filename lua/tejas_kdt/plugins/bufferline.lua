@@ -7,9 +7,15 @@ return {
 			{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
 			{ "<C-x>", "<Cmd>bdelete<CR>", desc = "Close Tab" },
 		},
+		---@module "bufferline"
+		---@type bufferline.Config
 		opts = {
 			options = {
-				separator_style = "slant", -- or "thick", "thin", "padded_slant", "slope", "none"
+				-- separator_style = { "|", "|" },
+				indicator = {
+					style = "none",
+				},
+				-- separator_style = "slope", -- or "thick", "thin", "padded_slant", "slope", "none", "padded_slope"
 				-- mode = "tabs",
 				-- -- separator_style = "slant",
 				-- show_buffer_close_icons = false,
