@@ -215,7 +215,7 @@ return {
 				html = { "prettier" },
 				css = { "prettier" },
 				json = { "prettier" },
-				python = { "ruff_organize_imports", "ruff_format" },
+				python = { "ruff_format" }, -- "ruff_organize_imports"
 				go = { "goimports" }, -- Go formatters
 				rust = { "rustfmt" }, -- Rust formatter
 			},
