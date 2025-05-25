@@ -141,7 +141,12 @@ return {
 					},
 				},
 
-				pyright = {},
+				-- pyright = {},
+				pyrefly = {
+					cmd = { "pyrefly", "lsp" },
+					filetypes = { "python" },
+					settings = {},
+				},
 				ts_ls = {}, -- ts_ls
 				html = {}, -- html-lsp
 				cssls = {}, -- css-lsp
