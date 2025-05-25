@@ -154,6 +154,18 @@ return {
 				gopls = {}, -- Go LSP
 				rust_analyzer = {}, -- Rust LSP
 				tailwindcss = {},
+
+				-- english...
+				ltex = {
+					-- settings = {
+					--     ltex = {
+					--       language = "en",
+					--       additionalRules = {
+					--         languageModel = "~/models/ngrams/",
+					--       },
+					--     },
+					--   },
+				},
 			}
 
 			local ensure_installed = vim.tbl_keys(servers or {})
