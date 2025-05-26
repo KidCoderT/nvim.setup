@@ -1,5 +1,5 @@
 function ColorMyPencils(color, transparent_bg)
-	color = color or "rose-pine"
+	color = color
 	vim.cmd.colorscheme(color)
 
 	clear_bg = transparent_bg or false
@@ -7,6 +7,32 @@ function ColorMyPencils(color, transparent_bg)
 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 	end
+
+	vim.cmd([[
+        highlight! link CmpItemAbbr Normal
+        highlight! link CmpItemAbbrMatch Normal
+        highlight! link CmpItemAbbrMatchFuzzy Normal
+        highlight! link CmpItemKind Normal
+        highlight! link CmpItemMenu Normal
+    ]])
+end
+
+colorschemes = {
+	"habamax",
+	"desert",
+	"slate",
+	"sorbet",
+	"unokai",
+	"monokai-pro",
+	"tokyonight-moon",
+	"gruvbox",
+}
+
+function Paint(decidedColor)
+	color = decidedColor or colorschemes[math.random(#colorschemes)]
+	vim.cmd.colorscheme(color)
+
+	print(color)
 
 	vim.cmd([[
         highlight! link CmpItemAbbr Normal
@@ -38,21 +64,30 @@ return {
 				},
 			})
 
-			vim.cmd("colorscheme tokyonight")
-			ColorMyPencils("tokyonight")
+			-- ColorMyPencils("tokyonight")
 		end,
 	},
 
-	-- {
-	--     "rose-pine/neovim",
-	--     name = "rose-pine",
-	--     config = function()
-	--         require('rose-pine').setup({
-	--             disable_background = true,
-	--         })
-	--
-	--         -- vim.cmd("colorscheme rose-pine")
-	--         -- ColorMyPencils()
-	--     end
-	-- },
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			require("rose-pine").setup({
+				disable_background = true,
+			})
+
+			-- vim.cmd("colorscheme rose-pine")
+			-- ColorMyPencils()
+		end,
+	},
+	{
+		"loctvl842/monokai-pro.nvim",
+		name = "monokai-pro",
+		config = function()
+			require("monokai-pro").setup()
+			ColorMyPencils("monokai-pro")
+		end,
+	},
+	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "morhetz/gruvbox", name = "gruvbox" },
 }
