@@ -6,6 +6,7 @@ return {
 			{ "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
 			{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
 			{ "<C-x>", "<Cmd>bdelete<CR>", desc = "Close Tab" },
+			{ "<C-X>", "<Cmd>bdelete!<CR>", desc = "Close Tab Without Saving" },
 		},
 		---@module "bufferline"
 		---@type bufferline.Config
