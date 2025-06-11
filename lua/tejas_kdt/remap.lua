@@ -4,10 +4,10 @@ vim.g.mapleader = " "
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
-vim.keymap.set("x", "<leader>p", [["_dP]], {desc="paste without copying what was in place"})
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "paste without copying what was in place" })
 
-vim.keymap.set("i", "<C-c>", "<Esc>", {desc="press escape"})
-vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {desc="escape terminal insert mode"})
+vim.keymap.set("i", "<C-c>", "<Esc>", { desc = "press escape" })
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "escape terminal insert mode" })
 
 -- Terminal
 -- vim.keymap.set("n", "<C-a>", function()
@@ -28,3 +28,8 @@ vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {desc="escape terminal insert mode"
 
 -- Select all
 vim.keymap.set("n", "<C-a>", "gg<S-v>G")
+
+-- Tabs without Plugin NOT POSSIBLE 😢
+-- local opts = { noremap = true, silent = true }
+-- vim.keymap.set("n", "<tab>", ":tabnext<CR>", opts)
+-- vim.keymap.set("n", "<tab>", ":tabprev<CR>", opts)
