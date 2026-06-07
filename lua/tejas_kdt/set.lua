@@ -25,8 +25,9 @@ vim.o.termguicolors = true
 
 vim.g.wilmenu = true
 vim.o.undofile = true
-local home = os.getenv("HOME") or os.getenv("USERPROFILE") or
-(os.getenv("HOMEDRIVE") and os.getenv("HOMEPATH") and (os.getenv("HOMEDRIVE") .. os.getenv("HOMEPATH")))
+local home = os.getenv("HOME")
+	or os.getenv("USERPROFILE")
+	or (os.getenv("HOMEDRIVE") and os.getenv("HOMEPATH") and (os.getenv("HOMEDRIVE") .. os.getenv("HOMEPATH")))
 vim.opt.undodir = home .. "/.vim/undodir"
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -46,3 +47,8 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.hl.on_yank()
 	end,
 })
+
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.o.foldcolumn = "1"
+
+-- vim.o.foldmethod = "indent"

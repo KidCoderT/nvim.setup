@@ -2,7 +2,7 @@ function ColorMyPencils(color, transparent_bg)
 	color = color
 	vim.cmd.colorscheme(color)
 
-	clear_bg = transparent_bg or false
+	clear_bg = false -- transparent_bg or false
 	if clear_bg then
 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -64,7 +64,7 @@ return {
 				},
 			})
 
-			-- ColorMyPencils("tokyonight")
+			-- ColorMyPencils("tokyonight", true)
 		end,
 	},
 
@@ -85,9 +85,32 @@ return {
 		name = "monokai-pro",
 		config = function()
 			require("monokai-pro").setup()
-			ColorMyPencils("monokai-pro")
+			-- ColorMyPencils("monokai-pro", true)
 		end,
 	},
 	{ "catppuccin/nvim", name = "catppuccin" },
 	{ "morhetz/gruvbox", name = "gruvbox" },
+	{
+		"rebelot/kanagawa.nvim",
+		name = "kanagawa",
+		opts = {
+			transparent = true,
+			theme = "dragon",
+		},
+		-- config = function()
+		-- 	-- ColorMyPencils("kanagawa", true)
+		-- end,
+	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		-- opts = {
+		-- 	transparent_background = true,
+		-- },
+		config = function()
+			require("monokai-pro").setup({})
+			ColorMyPencils("monokai-pro", false)
+		end,
+	},
 }

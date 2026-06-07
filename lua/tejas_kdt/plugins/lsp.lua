@@ -151,8 +151,8 @@ return {
 				html = {}, -- html-lsp
 				cssls = {}, -- css-lsp
 				emmet_ls = {}, -- emmet-ls (optional, but great for React/HTML/CSS)
-				gopls = {}, -- Go LSP
-				rust_analyzer = {}, -- Rust LSP
+				-- gopls = {}, -- Go LSP
+				-- rust_analyzer = {}, -- Rust LSP
 				tailwindcss = {},
 
 				-- english...
@@ -173,9 +173,9 @@ return {
 				"stylua",
 				"prettier",
 				"gopls",
-				"rust_analyzer",
-				"goimports",
-				"rustfmt",
+				-- "rust_analyzer",
+				-- "goimports",
+				-- "rustfmt",
 				"tailwindcss-language-server",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -244,6 +244,7 @@ return {
 		event = "VimEnter",
 		version = "1.*",
 		dependencies = {
+			-- Snippets
 			-- Snippet Engine
 			{
 				"L3MON4D3/LuaSnip",
@@ -261,12 +262,12 @@ return {
 					-- `friendly-snippets` contains a variety of premade snippets.
 					--    See the README about individual language/framework/plugin snippets:
 					--    https://github.com/rafamadriz/friendly-snippets
-					-- {
-					--   'rafamadriz/friendly-snippets',
-					--   config = function()
-					--     require('luasnip.loaders.from_vscode').lazy_load()
-					--   end,
-					-- },
+					{
+						"rafamadriz/friendly-snippets",
+						config = function()
+							require("luasnip.loaders.from_vscode").lazy_load()
+						end,
+					},
 				},
 				opts = {},
 			},
