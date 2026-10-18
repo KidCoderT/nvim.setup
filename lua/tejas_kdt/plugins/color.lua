@@ -2,7 +2,7 @@ function ColorMyPencils(color, transparent_bg)
 	color = color
 	vim.cmd.colorscheme(color)
 
-	clear_bg = false -- transparent_bg or false
+	clear_bg = transparent_bg or false
 	if clear_bg then
 		vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 		vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -51,7 +51,7 @@ return {
 				-- your configuration comes here
 				-- or leave it empty to use the default settings
 				style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-				-- transparent = true, -- Enable this to disable setting the background color
+				transparent = true, -- Enable this to disable setting the background color
 				terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
 				styles = {
 					-- Style to be applied to different syntax groups
@@ -73,7 +73,7 @@ return {
 		name = "rose-pine",
 		config = function()
 			require("rose-pine").setup({
-				disable_background = true,
+				-- disable_background = true,
 			})
 
 			-- vim.cmd("colorscheme rose-pine")
@@ -94,7 +94,7 @@ return {
 		"rebelot/kanagawa.nvim",
 		name = "kanagawa",
 		opts = {
-			transparent = true,
+			-- transparent = true,
 			theme = "dragon",
 		},
 		-- config = function()
@@ -105,12 +105,12 @@ return {
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
-		-- opts = {
-		-- 	transparent_background = true,
-		-- },
+		opts = {
+			-- transparent_background = true,
+		},
 		config = function()
-			require("monokai-pro").setup({})
-			ColorMyPencils("monokai-pro", false)
+			-- require("monokai-pro").setup({})
+			ColorMyPencils("catppuccin-macchiato", false)
 		end,
 	},
 }
